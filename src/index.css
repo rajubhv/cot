@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white;
+}
+
+/* Button component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl transition-all duration-200 focus-ring;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-soft hover:shadow-medium hover:scale-[1.02];
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-secondary-700 hover:bg-secondary-50 active:bg-secondary-100 border border-secondary-300;
+  }
+  
+  .btn-success {
+    @apply btn bg-success-600 text-white hover:bg-success-700 active:bg-success-800;
+  }
+  
+  .btn-warning {
+    @apply btn bg-warning-600 text-white hover:bg-warning-700 active:bg-warning-800;
+  }
+  
+  .btn-danger {
+    @apply btn bg-danger-600 text-white hover:bg-danger-700 active:bg-danger-800;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent text-secondary-600 hover:bg-secondary-100 hover:text-secondary-900;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white backdrop-blur-sm border border-secondary-200 rounded-xl shadow-soft;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-medium hover:border-secondary-300 transition-all duration-200;
+  }
+  
+  /* Status badge styles */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-success {
+    @apply status-badge bg-success-100 text-success-800 border border-success-200;
+  }
+  
+  .status-warning {
+    @apply status-badge bg-warning-100 text-warning-800 border border-warning-200;
+  }
+  
+  .status-danger {
+    @apply status-badge bg-danger-100 text-danger-800 border border-danger-200;
+  }
+  
+  .status-info {
+    @apply status-badge bg-primary-100 text-primary-800 border border-primary-200;
+  }
+  
+  .status-neutral {
+    @apply status-badge bg-secondary-100 text-secondary-800 border border-secondary-200;
+  }
+}
